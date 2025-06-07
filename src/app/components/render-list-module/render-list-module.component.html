@@ -1,0 +1,10 @@
+<section id="section">
+  <h2>Render list module</h2>
+  <p>Módulo para ver como renderiza uma lista de dados. (tipo um .map do React)</p>
+<!-- Para usar o ngClass tem que importar o commom modules -->
+  <ul>
+    @for(user of users; track user.name; let e = $even) {
+      <li (click)="activeAlert(user.name)" [ngClass]="e ? 'fitted' : ''">{{user.id}} - {{user.name}}</li>
+    }
+  </ul>
+</section>

@@ -1,0 +1,30 @@
+<section id="section">
+  <h2>Form Module Component</h2>
+  <p>Esse é um modelo para testar forms e requisições no angular.</p>
+
+
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <legend><h1>Criar usuário</h1></legend>
+      <div>
+        <label for="name">Nome</label>
+        <input required type="text" id="name" name="name" [(ngModel)]="dataForm.name" />
+      </div>
+
+      <div>
+        <label for="password">Senha</label>
+        <input required type="password" id="password" name="password" [(ngModel)]="dataForm.password" />
+      </div>
+
+      @if (isLoading) {
+        <button type="submit" disabled>Enviando...</button>
+      }
+
+      @if (!isLoading) {
+        <button type="submit">Enviar</button>
+      }
+
+      <p>{{errorMessage}} {{successMessage}}</p>
+    </form>
+
+
+</section>

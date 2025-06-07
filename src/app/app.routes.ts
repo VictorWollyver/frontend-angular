@@ -1,5 +1,19 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { FormModuleComponent } from './components/form-module/form-module.component';
+import { RenderListModuleComponent } from './components/render-list-module/render-list-module.component';
 
 export const routes: Routes = [
-  {path: 'teste'}
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'form-module',
+    component: FormModuleComponent
+  },
+  {
+    path: 'render-list-module',
+    component: RenderListModuleComponent,
+  }
 ];
