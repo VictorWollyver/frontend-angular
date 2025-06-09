@@ -1,0 +1,12 @@
+<section id="section">
+  <h1>States Module</h1>
+  <p>Modulo para aprender sobre renderização e atualização de dados na tela</p>
+
+  <button (click)="increment()">Clique {{counter}}</button>
+
+  <button (click)="toggleContent()">Ver conteudo</button>
+
+  @if(showContent) {
+    <p>Esse conteudo sera mostrado de forma condicional</p>
+  }
+</section>

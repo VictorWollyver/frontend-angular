@@ -4,7 +4,7 @@
 <!-- Para usar o ngClass tem que importar o commom modules -->
   <ul>
     @for(user of users; track user.name; let e = $even) {
-      <li (click)="activeAlert(user.name)" [ngClass]="e ? 'fitted' : ''">{{user.id}} - {{user.name}}</li>
+      <app-user-item [user]="user" [e]="e"> </app-user-item>
     }
   </ul>
 </section>
