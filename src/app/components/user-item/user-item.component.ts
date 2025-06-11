@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-user-item',
@@ -8,8 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user-item.component.css'
 })
 export class UserItemComponent {
-  @Input() user: { id: number, name: string, password: string } = { id: 0, name: '', password: '' };
-  @Input() e: boolean = false;
+  user = input({ id: 0, name: '', password: '' });
+  e = input(false);
 
   activeAlert(message: string) {
     alert(message)

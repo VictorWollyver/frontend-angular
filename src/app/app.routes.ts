@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FormModuleComponent } from './components/form-module/form-module.component';
 import { RenderListModuleComponent } from './components/render-list-module/render-list-module.component';
 import { StatesModuleComponent } from './components/states-module/states-module.component';
+import { EffectModuleComponent } from './components/effect-module/effect-module.component';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'states-module',
     component: StatesModuleComponent,
+  },
+  {
+    path: 'effect-module',
+    component: EffectModuleComponent,
   }
 ];

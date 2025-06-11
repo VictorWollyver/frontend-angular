@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments';
+import { Component, effect, inject, OnInit } from '@angular/core';
 import { UserItemComponent } from '../user-item/user-item.component';
+import { UserService } from '../../services/user.service';
+import { HttpClient } from '@angular/common/http';
 
 interface IUser {
   id: number;
@@ -19,18 +20,12 @@ export class RenderListModuleComponent implements OnInit  {
   isError = ""
   isSuccess = ""
 
+  private userService = inject(UserService)
+
+
   async ngOnInit() {
-    try {
-      const response = await fetch(environment.API_URL + "/users")
-      if(!response.ok) throw new Error("Não foi possivel buscar os usuários")
-      const data = await response.json()
-      this.users = data
-      this.isSuccess = "Usuários buscados com sucesso"
-    } catch (error: unknown) {
-      if(error instanceof Error) {
-        this.isError = error.message
-      }
-      this.isError = "Erro genérico"
-    }
+    this.userService.getUsers().subscribe((data: Array<IUser>) => {
+      this.users = data;
+    })
   }
 }
