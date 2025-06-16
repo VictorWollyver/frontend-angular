@@ -4,6 +4,7 @@ import { FormModuleComponent } from './components/form-module/form-module.compon
 import { RenderListModuleComponent } from './components/render-list-module/render-list-module.component';
 import { StatesModuleComponent } from './components/states-module/states-module.component';
 import { EffectModuleComponent } from './components/effect-module/effect-module.component';
+import { LoginReactiveFormsComponent } from './components/login-reactive-forms/login-reactive-forms.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'effect-module',
     component: EffectModuleComponent,
+  },
+  {
+    path: 'login-reactive-forms',
+    component: LoginReactiveFormsComponent,
   }
 ];

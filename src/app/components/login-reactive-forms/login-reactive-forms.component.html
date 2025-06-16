@@ -1,0 +1,27 @@
+<section id="section">
+  <h1>Login reactive Forms</h1>
+  <p>Módulo para realizar um login usando os reactive forms do angular</p>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" formControlName="name" />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" password="password" placeholder="Enter your password" formControlName="password" />
+    </div>
+
+
+    @if(isLoading) {
+      <button type="button" disabled>Loading...</button>
+    }
+
+    @if(!isLoading) {
+      <button type="submit">Login</button>
+    }
+
+    {{errorMessage}} {{successMessage}}
+  </form>
+</section>
